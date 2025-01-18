@@ -33,7 +33,7 @@ namespace InsightForge.Playground
         private void DisplayInfoMenuItem_Click(object sender, RoutedEventArgs e)
         {
             // 使用 Frame 进行导航
-            mainFrame.Navigate(new DisplayInfo());
+            Main.Navigate(new DisplayInfo());
         }
 
         private void ExitMenuItem_Click(object sender, RoutedEventArgs e)
@@ -44,7 +44,7 @@ namespace InsightForge.Playground
 
         private void ShowControlsDemoMenuItem_Click(object sender, RoutedEventArgs e)
         {
-            mainFrame.Navigate(new ControlsDemo());
+            Main.Navigate(new ControlsDemo());
         }
     }
 }

@@ -7,7 +7,133 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
 
-    <Grid>
+    <DockPanel>
+        <Grid DockPanel.Dock="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            
+            <Menu Name="Menu" Grid.Row="0">
+                <MenuItem Header="_File"/>
+                <MenuItem Header="_View"/>
+                <MenuItem Header="_Windows"/>
+                <MenuItem Header="_About"/>
+            </Menu>
+            <Menu Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right">
+                <MenuItem Name="ThemeMode" FontFamily="Segoe Fluent Icons" Header="&#xE706;"/>
+                <MenuItem Name="MenuExpander" FontFamily="Segoe Fluent Icons" Header="&#xE70E;" />
+            </Menu>
+            <WrapPanel Grid.Row="1">
+                <GroupBox Background="Bisque" Height="80">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <StackPanel Grid.Column="0">
+                            <TextBlock FontFamily="Segoe Fluent Icons" FontSize="24" Text="&#xE70E;" Padding="10,10,10,0"/>
+                            <TextBlock Text="Button 1"/>
+                        </StackPanel>
+                        <StackPanel Grid.Column="1">
+                            <TextBlock FontFamily="Segoe Fluent Icons" FontSize="24" Text="&#xE70E;" Padding="10,10,10,0"/>
+                            <TextBlock Text="Button 2"/>
+                        </StackPanel>
+                        <StackPanel Grid.Column="2">
+                            <TextBlock FontFamily="Segoe Fluent Icons" FontSize="24" Text="&#xE70E;" Padding="10,10,10,0"/>
+                            <TextBlock Text="Button 3"/>
+                        </StackPanel>
+                        <StackPanel Grid.Column="3">
+                            <TextBlock FontFamily="Segoe Fluent Icons" FontSize="24" Text="&#xE70E;" Padding="10,10,10,0"/>
+                            <TextBlock Text="Button 4"/>
+                        </StackPanel>
+                        <StackPanel Grid.Column="4">
+                            <TextBlock FontFamily="Segoe Fluent Icons" FontSize="24" Text="&#xE70E;" Padding="10,10,10,0"/>
+                            <TextBlock Text="Button 5"/>
+                        </StackPanel>
+
+                        <TextBlock Grid.Row="1" Grid.ColumnSpan="5" HorizontalAlignment="Center">Group Name</TextBlock>
+                        
+                    </Grid>
+                </GroupBox>
+                <GroupBox Header="Group 2" Background="Chocolate">
+
+                </GroupBox>
+                <GroupBox Header="Group 3" Background="DarkSeaGreen">
+
+                </GroupBox>
+                <GroupBox Header="Group 3" Background="DarkSeaGreen">
+
+                </GroupBox>
+                <GroupBox Header="Group 3" Background="DarkSeaGreen">
+
+                </GroupBox>
+                <GroupBox Header="Group 3" Background="DarkSeaGreen">
+
+                </GroupBox>
+                <GroupBox Header="Group 3" Background="DarkSeaGreen">
+
+                </GroupBox>
+                <GroupBox Header="Group 3" Background="DarkSeaGreen">
+
+                </GroupBox>
+            </WrapPanel>
+        </Grid>
+
+        <Grid Name="Footer" DockPanel.Dock="Bottom" Height="10" Background="Aqua"/>
+
+        <Grid Name="Left" DockPanel.Dock="Left" Width="200" Background="AliceBlue">
+            <TabControl TabStripPlacement="Left" Margin="10">
+                <!-- Tab Item 1 -->
+                <TabItem>
+                    <TabItem.Header>
+                        <TextBlock Text="测试菜单" TextWrapping="Wrap" Width="15"></TextBlock>
+                    </TabItem.Header>
+                    <TextBlock Text="Content of Tab 1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
+                </TabItem>
+                <!-- Tab Item 2 -->
+                <TabItem >
+                    <TabItem.Header>
+                        <TextBlock Text="测试菜单" TextWrapping="Wrap" Width="15"></TextBlock>
+                    </TabItem.Header>
+                    <TextBlock Text="Content of Tab 2" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
+                </TabItem>
+                <!-- Tab Item 3 -->
+                <TabItem >
+                    <TabItem.Header>
+                        <TextBlock Text="测试菜单" TextWrapping="Wrap" Width="15"></TextBlock>
+                    </TabItem.Header>
+                    <TextBlock Text="Content of Tab 3" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
+                </TabItem>
+            </TabControl>
+        </Grid>
+
+        <TabControl Name="Tabs">
+            <TabItem Header="Tab 1">
+                <Frame Name="Main" Grid.Row="1" />
+            </TabItem>
+            <TabItem Header="Tab 2"/>
+            <TabItem Header="Tab 3"/>
+            <TabItem Header="Tab 4"/>
+            <TabItem Header="Tab 5"/>
+        </TabControl>
+        
+    </DockPanel>
+
+    <!--<Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
@@ -21,7 +147,7 @@
 
         
 
-        <!-- 菜单栏 -->
+        --><!-- 菜单栏 --><!--
         <Menu VerticalAlignment="Top" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
             <MenuItem Header="_Windows">
                 <MenuItem Header="Display Info" Click="DisplayInfoMenuItem_Click" />
@@ -44,7 +170,7 @@
 
         <DockPanel>
             <Menu VerticalAlignment="Top" Grid.Row="1" Grid.Column="0">
-                <!-- File Menu -->
+                --><!-- File Menu --><!--
                 <MenuItem Header="File" HorizontalContentAlignment="Stretch">
                     <WrapPanel DockPanel.Dock="Top"  HorizontalAlignment="Stretch">
                         <Button Content="New" Margin="5" Width="60" />
@@ -57,7 +183,7 @@
                         <MenuItem Header="333"></MenuItem>
                     </WrapPanel>
                 </MenuItem>
-                <!-- Edit Menu -->
+                --><!-- Edit Menu --><!--
                 <MenuItem Header="Edit">
                     <WrapPanel>
                         <Button Content="Cut" Margin="5" Width="60" />
@@ -73,7 +199,7 @@
             </Menu>
         </DockPanel>
 
-        <!-- 页面导航容器 -->
+        --><!-- 页面导航容器 --><!--
         <Frame Grid.Row="1" Name="mainFrame" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,30,0,0" />
-    </Grid>
+    </Grid>-->
 </Window>
