@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Dimensions and Resolution Type</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f9f9f9;
+        }
+        .container {
+            text-align: center;
+        }
+        .info {
+            font-size: 1.5em;
+            margin: 10px 0;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Display Information</h1>
+        <div class="info" id="screen-size"></div>
+        <div class="info" id="dpi"></div>
+        <div class="info" id="scale"></div>
+        <div class="info" id="resolution-type"></div>
+    </div>
+    <script>
+        function getResolutionType(width, height) {
+            const resolutions = [
+                { name: "720p (HD)", width: 1280, height: 720 },
+                { name: "1080p (Full HD)", width: 1920, height: 1080 },
+                { name: "1440p (2K)", width: 2560, height: 1440 },
+                { name: "2160p (4K)", width: 3840, height: 2160 },
+                { name: "4320p (8K)", width: 7680, height: 4320 },
+            ];
+
+            for (const res of resolutions) {
+                if (width >= res.width && height >= res.height) {
+                    return res.name;
+                }
+            }
+            return "Custom Resolution";
+        }
+
+        function getDisplayInfo() {
+            // 获取屏幕分辨率
+            const screenWidth = window.screen.width; // 屏幕宽度（像素）
+            const screenHeight = window.screen.height; // 屏幕高度（像素）
+
+            // 估算 DPI
+            const devicePixelRatio = window.devicePixelRatio; // 设备像素比
+            const estimatedDPI = screenWidth / (screenWidth / devicePixelRatio);
+
+            // 显示器的缩放比例
+            const scale = (devicePixelRatio * 100).toFixed(2) + "%";
+
+            // 获取分辨率类别
+            const resolutionType = getResolutionType(screenWidth, screenHeight);
+
+            // 更新页面信息
+            document.getElementById("screen-size").innerText =
+                `Screen Resolution: ${screenWidth}px x ${screenHeight}px`;
+
+            document.getElementById("dpi").innerText =
+                `Estimated DPI: ${estimatedDPI.toFixed(2)}`;
+
+            document.getElementById("scale").innerText =
+                `Device Pixel Ratio: ${scale}`;
+
+            document.getElementById("resolution-type").innerText =
+                `Resolution Type: ${resolutionType}`;
+        }
+
+        // 在页面加载时调用
+        window.onload = getDisplayInfo;
+    </script>
+</body>
+</html>
