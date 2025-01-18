@@ -28,6 +28,9 @@
 <body>
     <div class="container">
         <h1>Display Information</h1>
+
+        <div class="info" id="page-size"></div>
+        <div class="info" id="window-size"></div>
         <div class="info" id="screen-size"></div>
         <div class="info" id="dpi"></div>
         <div class="info" id="scale"></div>
@@ -52,6 +55,15 @@
         }
 
         function getDisplayInfo() {
+
+            // 页面尺寸
+            const pageWidth = document.documentElement.scrollWidth;
+            const pageHeight = document.documentElement.scrollHeight;
+
+            // 窗口尺寸
+            const windowWidth = window.innerWidth;
+            const windowHeight = window.innerHeight;
+
             // 获取屏幕分辨率
             const screenWidth = window.screen.width; // 屏幕宽度（像素）
             const screenHeight = window.screen.height; // 屏幕高度（像素）
@@ -67,6 +79,12 @@
             const resolutionType = getResolutionType(screenWidth, screenHeight);
 
             // 更新页面信息
+            document.getElementById("page-size").innerText =
+                `Page Resolution: ${pageWidth}px x ${pageHeight}px`;
+
+            document.getElementById("window-size").innerText =
+                `Window Resolution: ${windowWidth}px x ${windowHeight}px`;
+
             document.getElementById("screen-size").innerText =
                 `Screen Resolution: ${screenWidth}px x ${screenHeight}px`;
 
