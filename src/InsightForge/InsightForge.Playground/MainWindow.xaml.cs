@@ -16,11 +16,18 @@ namespace InsightForge.Playground
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow: Window
     {
         public MainWindow()
         {
-            InitializeComponent();
+            try
+            {
+                InitializeComponent();
+            }
+            catch(Exception ex)
+            {
+                int i = 0;
+            }
         }
 
         private void DisplayInfoMenuItem_Click(object sender, RoutedEventArgs e)
@@ -33,6 +40,11 @@ namespace InsightForge.Playground
         {
             // 退出应用
             Application.Current.Shutdown();
+        }
+
+        private void ShowControlsDemoMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            mainFrame.Navigate(new ControlsDemo());
         }
     }
 }

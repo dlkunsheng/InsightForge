@@ -4,20 +4,62 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:InsightForge.Playground"
+        xmlns:ribbon="clr-namespace:System.Windows.Controls.Ribbon;assembly=System.Windows.Controls.Ribbon"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <ribbon:Ribbon Grid.Row="0">
+
+            <!-- 定义主菜单 -->
+            <ribbon:Ribbon.ApplicationMenu>
+                <ribbon:RibbonApplicationMenu>
+                    <ribbon:RibbonApplicationMenuItem Header="New" Command="{Binding NewCommand}" />
+                    <ribbon:RibbonApplicationMenuItem Header="Open" Command="{Binding OpenCommand}" />
+                    <ribbon:RibbonApplicationMenuItem Header="Save" Command="{Binding SaveCommand}" />
+                    <ribbon:RibbonApplicationMenuItem Header="Exit" Command="{Binding ExitCommand}" />
+                </ribbon:RibbonApplicationMenu>
+            </ribbon:Ribbon.ApplicationMenu>
+            
+            <!-- 添加选项卡 -->
+            <ribbon:RibbonTab Header="Home">
+                <ribbon:RibbonGroup Header="Clipboard" >
+                    <!-- 添加按钮 -->
+                    <ribbon:RibbonButton Label="Copy"/>
+                    <ribbon:RibbonButton Label="Paste"/>
+                </ribbon:RibbonGroup>
+                <ribbon:RibbonGroup Header="Editing">
+                    <ribbon:RibbonButton Label="Cut"/>
+                    <ribbon:RibbonButton Label="Undo"/>
+                </ribbon:RibbonGroup>
+            </ribbon:RibbonTab>
+
+            <ribbon:RibbonTab Header="View">
+                <!-- 视图选项卡内容 -->
+                <ribbon:RibbonGroup Header="Zoom">
+                    <ribbon:RibbonButton Label="Zoom In"/>
+                    <ribbon:RibbonButton Label="Zoom Out"/>
+                </ribbon:RibbonGroup>
+            </ribbon:RibbonTab>
+        </ribbon:Ribbon>
+
 
         <!-- 菜单栏 -->
         <Menu VerticalAlignment="Top">
             <MenuItem Header="_Windows">
-                <MenuItem Header="DisplayInfo" Click="DisplayInfoMenuItem_Click" />
+                <MenuItem Header="Display Info" Click="DisplayInfoMenuItem_Click" />
+                <MenuItem Header="Controls" Click="ShowControlsDemoMenuItem_Click" />
                 <Separator />
                 <MenuItem Header="Exit" Click="ExitMenuItem_Click" />
             </MenuItem>
         </Menu>
 
         <!-- 页面导航容器 -->
-        <Frame Name="mainFrame" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,30,0,0" />
+        <Frame Grid.Row="1" Name="mainFrame" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,30,0,0" />
     </Grid>
 </Window>
