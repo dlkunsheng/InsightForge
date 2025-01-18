@@ -95,8 +95,13 @@
 
         <Grid Name="Footer" DockPanel.Dock="Bottom" Height="10" Background="Aqua"/>
 
-        <Grid Name="Left" DockPanel.Dock="Left" Width="200" Background="AliceBlue">
-            <TabControl TabStripPlacement="Left" Margin="10">
+        <Grid Name="Left" Background="AliceBlue">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition  Width="200" MinWidth="28" MaxWidth="400"/>
+                <ColumnDefinition Width="2"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TabControl TabStripPlacement="Left" Grid.Column="0" HorizontalAlignment="Stretch">
                 <!-- Tab Item 1 -->
                 <TabItem>
                     <TabItem.Header>
@@ -119,17 +124,19 @@
                     <TextBlock Text="Content of Tab 3" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
                 </TabItem>
             </TabControl>
+            <GridSplitter Width="2" Grid.Column="1" ResizeBehavior="PreviousAndNext"></GridSplitter>
+            <TabControl Name="Tabs" Grid.Column="2">
+                <TabItem Header="Tab 1">
+                    <Frame Name="Main" Grid.Row="1" />
+                </TabItem>
+                <TabItem Header="Tab 2"/>
+                <TabItem Header="Tab 3"/>
+                <TabItem Header="Tab 4"/>
+                <TabItem Header="Tab 5"/>
+            </TabControl>
         </Grid>
 
-        <TabControl Name="Tabs">
-            <TabItem Header="Tab 1">
-                <Frame Name="Main" Grid.Row="1" />
-            </TabItem>
-            <TabItem Header="Tab 2"/>
-            <TabItem Header="Tab 3"/>
-            <TabItem Header="Tab 4"/>
-            <TabItem Header="Tab 5"/>
-        </TabControl>
+      
         
     </DockPanel>
 
