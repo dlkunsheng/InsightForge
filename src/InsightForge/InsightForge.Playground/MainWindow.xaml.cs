@@ -18,6 +18,8 @@ namespace InsightForge.Playground
     /// </summary>
     public partial class MainWindow: Window
     {
+        private ThemeMode themeMode = Application.Current.ThemeMode;
+
         public MainWindow()
         {
             try
@@ -50,6 +52,12 @@ namespace InsightForge.Playground
         private void WellboreMenuItem_Click(object sender, RoutedEventArgs e)
         {
             Main.Navigate(new Wellbore());
+        }
+
+        private void ThemeMode_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.ThemeMode = Application.Current.ThemeMode==System.Windows.ThemeMode.Light ? System.Windows.ThemeMode.Dark : System.Windows.ThemeMode.Light;
+            this.themeMode = Application.Current.ThemeMode;
         }
     }
 }

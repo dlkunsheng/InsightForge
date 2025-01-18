@@ -32,7 +32,7 @@
                 <MenuItem Header="_About"/>
             </Menu>
             <Menu Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right">
-                <MenuItem Name="ThemeMode" FontFamily="Segoe Fluent Icons" Header="&#xE706;"/>
+                <MenuItem Name="ThemeMode" FontFamily="Segoe Fluent Icons" Header="&#xE706;" Click="ThemeMode_Click"/>
                 <MenuItem Name="MenuExpander" FontFamily="Segoe Fluent Icons" Header="&#xE70E;" />
             </Menu>
             <WrapPanel Grid.Row="1">
@@ -109,21 +109,21 @@
             </Grid.ColumnDefinitions>
             <TabControl TabStripPlacement="Left" Grid.Column="0" HorizontalAlignment="Stretch">
                 <!-- Tab Item 1 -->
-                <TabItem>
+                <TabItem HorizontalContentAlignment="Left" Width="30">
                     <TabItem.Header>
                         <TextBlock Text="测试菜单" TextWrapping="Wrap" Width="15"></TextBlock>
                     </TabItem.Header>
                     <TextBlock Text="Content of Tab 1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
                 </TabItem>
                 <!-- Tab Item 2 -->
-                <TabItem >
+                <TabItem HorizontalContentAlignment="Left" Width="30" >
                     <TabItem.Header>
                         <TextBlock Text="测试菜单" TextWrapping="Wrap" Width="15"></TextBlock>
                     </TabItem.Header>
                     <TextBlock Text="Content of Tab 2" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
                 </TabItem>
                 <!-- Tab Item 3 -->
-                <TabItem >
+                <TabItem  HorizontalContentAlignment="Left" Width="30">
                     <TabItem.Header>
                         <TextBlock Text="测试菜单" TextWrapping="Wrap" Width="15"></TextBlock>
                     </TabItem.Header>
