@@ -46,5 +46,10 @@ namespace InsightForge.Playground
         {
             Main.Navigate(new ControlsDemo());
         }
+
+        private void WellboreMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Navigate(new Wellbore());
+        }
     }
 }

@@ -22,7 +22,13 @@
             <Menu Name="Menu" Grid.Row="0">
                 <MenuItem Header="_File"/>
                 <MenuItem Header="_View"/>
-                <MenuItem Header="_Windows"/>
+                <MenuItem Header="_Windows">
+                    <MenuItem Header="Display Info" Click="DisplayInfoMenuItem_Click"/>
+                    <MenuItem Header="Controls Demo" Click="ShowControlsDemoMenuItem_Click"/>
+                    <MenuItem Header="Wellbore" Click="WellboreMenuItem_Click"/>
+                    <Separator/>
+                    <MenuItem Header="E_xit" Click="ExitMenuItem_Click"/>
+                </MenuItem>
                 <MenuItem Header="_About"/>
             </Menu>
             <Menu Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right">
