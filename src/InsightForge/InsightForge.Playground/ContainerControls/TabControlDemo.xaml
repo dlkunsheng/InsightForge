@@ -1,0 +1,20 @@
+﻿<Window x:Class="InsightForge.Playground.ContainerControls.TabControlDemo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InsightForge.Playground.ContainerControls"
+        mc:Ignorable="d"
+        Title="TabControlDemo" Height="450" Width="800">
+    <Grid>
+        <TextBlock>TabControl Demo</TextBlock>
+        <TabControl>
+            <TabItem Header="Tab 1">
+                <TextBlock Text="Content for Tab 1"/>
+            </TabItem>
+            <TabItem Header="Tab 2">
+                <TextBlock Text="Content for Tab 2"/>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
